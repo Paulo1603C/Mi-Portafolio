@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 
 void main() => runApp(PortafolioApp());
 
@@ -113,7 +114,7 @@ class PortafolioPage extends StatelessWidget {
                           children: [
                             Container(
                               child: Text(
-                                "Hola, Mi nombre es ",
+                                "Hi, Mi name is ",
                                 style: TextStyle(
                                     color: Colors.white38, fontSize: 20),
                               ),
@@ -137,14 +138,16 @@ class PortafolioPage extends StatelessWidget {
                                 repeatForever: true,
                               ),
                             ),
-                            SizedBox(height: 15.0,),
+                            SizedBox(
+                              height: 15.0,
+                            ),
                             Container(
                               child: Padding(
                                 padding: EdgeInsets.only(left: 16.0),
                                 child: Text(
-                                    "Soy un estudiante de Ingeniería de Software apasionado por la programación y el desarrollo de software." +
-                                        " Actualmente, estoy buscando una oportunidad para aplicar mis conocimientos y habilidades en un entorno profesional y aprender de los expertos " +
-                                        "en la industria. Estoy interesado en proyectos desafiantes que me permitan crecer y desarrollarme como ingeniero de software.",
+                                    "I am a passionate Software Engineering student about programming and software development. Currently, I am looking for an opportunity" +
+                                        " to apply my knowledge and skills in a professional environment and learn from experts in the industry. I am interested in challenging" +
+                                        " projects that allow me to grow and develop as a software engineer.",
                                     style: TextStyle(
                                         color: Colors.white70, fontSize: 15)),
                               ),
@@ -156,7 +159,7 @@ class PortafolioPage extends StatelessWidget {
                                 // Acción a realizar cuando se presiona el botón
                               },
                               child: Text(
-                                'Presionar',
+                                'check out my item',
                                 style: TextStyle(
                                   fontSize: 18.0,
                                   color: Colors.white24,
@@ -176,11 +179,384 @@ class PortafolioPage extends StatelessWidget {
                             ))
                           ],
                         ),
+                        SizedBox(
+                          height: 400.0,
+                        ),
                         //descripcion mia
-                        Row(
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Container(),
-                            Container(),
+                            Container(
+                              child: AnimatedTextKit(
+                                animatedTexts: [
+                                  TypewriterAnimatedText(
+                                    '1) About me',
+                                    textStyle: TextStyle(
+                                      fontSize: 20,
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                    speed: Duration(milliseconds: 200),
+                                  ),
+                                ],
+                                repeatForever: true,
+                              ),
+                            ),
+                            SizedBox(
+                              height: 15.0,
+                            ),
+                            Padding(
+                              padding: EdgeInsets.all(30),
+                              child: Card(
+                                color: Colors.transparent,
+                                child: Row(
+                                  children: [
+                                    Expanded(
+                                      flex: 3,
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Padding(
+                                            padding: EdgeInsets.all(8.0),
+                                            child: Text(
+                                              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consectetur lectus in efficitur consectetur. Sed eget mi eu dui tristique gravida.',
+                                              style: TextStyle(
+                                                  fontSize: 16,
+                                                  color: Colors.white),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    Expanded(
+                                      flex: 2,
+                                      child: Container(
+                                        decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.only(
+                                            topRight: Radius.circular(14),
+                                            bottomRight: Radius.circular(14),
+                                          ),
+                                          color: Colors.grey,
+                                        ),
+                                        child: Image.asset(
+                                          'assets/imagen2.png',
+                                          fit: BoxFit.cover,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
+
+                        SizedBox(
+                          height: 400,
+                        ),
+                        //some thins  I've build
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Container(
+                              child: AnimatedTextKit(
+                                animatedTexts: [
+                                  TypewriterAnimatedText(
+                                    '02)   Some thins  I have build',
+                                    textStyle: TextStyle(
+                                      fontSize: 20,
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                    speed: Duration(milliseconds: 200),
+                                  ),
+                                ],
+                                repeatForever: true,
+                              ),
+                            ),
+                            SizedBox(
+                              height: 15.0,
+                            ),
+                            Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 8.0),
+                              child: Card(
+                                color: Colors.transparent,
+                                elevation: 4,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                                child: Row(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Expanded(
+                                      flex: 3,
+                                      child: ClipRRect(
+                                        borderRadius: BorderRadius.only(
+                                          topLeft: Radius.circular(10),
+                                          bottomLeft: Radius.circular(10),
+                                        ),
+                                        child: Image.asset(
+                                          'assets/imagen1.jpg',
+                                          fit: BoxFit.cover,
+                                        ),
+                                      ),
+                                    ),
+                                    Expanded(
+                                      flex: 2,
+                                      child: Padding(
+                                        padding: EdgeInsets.all(16.0),
+                                        child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Text(
+                                              'Título del proyecto',
+                                              style: TextStyle(
+                                                fontSize: 18,
+                                                color: Color.fromRGBO(
+                                                    12, 183, 242, 2.0),
+                                                fontWeight: FontWeight.bold,
+                                              ),
+                                            ),
+                                            SizedBox(height: 8),
+                                            Text(
+                                              'Descripción del proyecto...',
+                                              style: TextStyle(
+                                                fontSize: 16,
+                                                color: Color.fromRGBO(
+                                                    12, 183, 242, 1.0),
+                                              ),
+                                            ),
+                                            SizedBox(height: 16),
+                                            Container(
+                                                child: OutlinedButton(
+                                              onPressed: () {
+                                                // Acción a realizar cuando se presiona el botón
+                                              },
+                                              child: Text(
+                                                'View more',
+                                                style: TextStyle(
+                                                  fontSize: 18.0,
+                                                  color: Colors.white54,
+                                                ),
+                                              ),
+                                              style: OutlinedButton.styleFrom(
+                                                side: BorderSide(
+                                                  width: 2,
+                                                  color: Colors.white24,
+                                                ),
+                                                padding: EdgeInsets.symmetric(
+                                                    horizontal: 50,
+                                                    vertical: 20),
+                                                shape: RoundedRectangleBorder(
+                                                  borderRadius:
+                                                      BorderRadius.circular(8),
+                                                ),
+                                              ),
+                                            ))
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                            //other
+
+                            SizedBox(
+                              height: 50.0,
+                            ),
+                            Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 8.0),
+                              child: Card(
+                                color: Colors.transparent,
+                                elevation: 4,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                                child: Row(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Expanded(
+                                      flex: 2,
+                                      child: Padding(
+                                        padding: EdgeInsets.all(16.0),
+                                        child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Text(
+                                              'Título del proyecto',
+                                              style: TextStyle(
+                                                fontSize: 18,
+                                                color: Color.fromRGBO(
+                                                    12, 183, 242, 2.0),
+                                                fontWeight: FontWeight.bold,
+                                              ),
+                                            ),
+                                            SizedBox(height: 8),
+                                            Text(
+                                              'Descripción del proyecto...',
+                                              style: TextStyle(
+                                                fontSize: 16,
+                                                color: Color.fromRGBO(
+                                                    12, 183, 242, 1.0),
+                                              ),
+                                            ),
+                                            SizedBox(height: 16),
+                                            Container(
+                                                child: OutlinedButton(
+                                              onPressed: () {
+                                                // Acción a realizar cuando se presiona el botón
+                                              },
+                                              child: Text(
+                                                'View more',
+                                                style: TextStyle(
+                                                  fontSize: 18.0,
+                                                  color: Colors.white54,
+                                                ),
+                                              ),
+                                              style: OutlinedButton.styleFrom(
+                                                side: BorderSide(
+                                                  width: 2,
+                                                  color: Colors.white24,
+                                                ),
+                                                padding: EdgeInsets.symmetric(
+                                                    horizontal: 50,
+                                                    vertical: 20),
+                                                shape: RoundedRectangleBorder(
+                                                  borderRadius:
+                                                      BorderRadius.circular(8),
+                                                ),
+                                              ),
+                                            ))
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                    Expanded(
+                                      flex: 3,
+                                      child: ClipRRect(
+                                        borderRadius: BorderRadius.only(
+                                          topLeft: Radius.circular(10),
+                                          bottomLeft: Radius.circular(10),
+                                        ),
+                                        child: CarouselSlider(
+                                          items: [
+                                            Image.asset('assets/imagen1.jpg'),
+                                            Image.asset('assets/imagen2.png'),
+                                            Image.asset('assets/imagen3.png'),
+                                          ],
+                                          options: CarouselOptions(
+                                            height: 200,
+                                            enlargeCenterPage: true,
+                                            autoPlay: true,
+                                            aspectRatio: 16 / 9,
+                                            autoPlayCurve: Curves.fastOutSlowIn,
+                                            enableInfiniteScroll: true,
+                                            autoPlayAnimationDuration:
+                                                Duration(milliseconds: 800),
+                                            viewportFraction: 0.8,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+
+                            //other
+                            SizedBox(
+                              height: 20.0,
+                            ),
+                            Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 8.0),
+                              child: Card(
+                                color: Colors.transparent,
+                                elevation: 4,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                                child: Row(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Expanded(
+                                      flex: 3,
+                                      child: ClipRRect(
+                                        borderRadius: BorderRadius.only(
+                                          topLeft: Radius.circular(10),
+                                          bottomLeft: Radius.circular(10),
+                                        ),
+                                        child: Image.asset(
+                                          'assets/imagen1.jpg',
+                                          fit: BoxFit.cover,
+                                        ),
+                                      ),
+                                    ),
+                                    Expanded(
+                                      flex: 2,
+                                      child: Padding(
+                                        padding: EdgeInsets.all(16.0),
+                                        child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Text(
+                                              'Título del proyecto',
+                                              style: TextStyle(
+                                                fontSize: 18,
+                                                color: Color.fromRGBO(
+                                                    12, 183, 242, 2.0),
+                                                fontWeight: FontWeight.bold,
+                                              ),
+                                            ),
+                                            SizedBox(height: 8),
+                                            Text(
+                                              'Descripción del proyecto...',
+                                              style: TextStyle(
+                                                fontSize: 16,
+                                                color: Color.fromRGBO(
+                                                    12, 183, 242, 1.0),
+                                              ),
+                                            ),
+                                            SizedBox(height: 16),
+                                            Container(
+                                                child: OutlinedButton(
+                                              onPressed: () {
+                                                // Acción a realizar cuando se presiona el botón
+                                              },
+                                              child: Text(
+                                                'View more',
+                                                style: TextStyle(
+                                                  fontSize: 18.0,
+                                                  color: Colors.white54,
+                                                ),
+                                              ),
+                                              style: OutlinedButton.styleFrom(
+                                                side: BorderSide(
+                                                  width: 2,
+                                                  color: Colors.white24,
+                                                ),
+                                                padding: EdgeInsets.symmetric(
+                                                    horizontal: 50,
+                                                    vertical: 20),
+                                                shape: RoundedRectangleBorder(
+                                                  borderRadius:
+                                                      BorderRadius.circular(8),
+                                                ),
+                                              ),
+                                            ))
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
                           ],
                         ),
                       ],
