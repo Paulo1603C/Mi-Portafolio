@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 void main() => runApp(PortafolioApp());
 
@@ -114,7 +115,7 @@ class PortafolioPage extends StatelessWidget {
                           children: [
                             Container(
                               child: Text(
-                                "Hi, Mi name is ",
+                                "Hi, My name is ",
                                 style: TextStyle(
                                     color: Colors.white38, fontSize: 20),
                               ),
@@ -255,7 +256,7 @@ class PortafolioPage extends StatelessWidget {
                         SizedBox(
                           height: 400,
                         ),
-                        //some thins  I've build
+                        //some things  I've build
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -263,7 +264,7 @@ class PortafolioPage extends StatelessWidget {
                               child: AnimatedTextKit(
                                 animatedTexts: [
                                   TypewriterAnimatedText(
-                                    '02)   Some thins  I have build',
+                                    '02)   Some things  I have build',
                                     textStyle: TextStyle(
                                       fontSize: 20,
                                       color: Colors.white,
@@ -278,6 +279,7 @@ class PortafolioPage extends StatelessWidget {
                             SizedBox(
                               height: 15.0,
                             ),
+                            //1
                             Padding(
                               padding: EdgeInsets.symmetric(horizontal: 8.0),
                               child: Card(
@@ -291,14 +293,30 @@ class PortafolioPage extends StatelessWidget {
                                   children: [
                                     Expanded(
                                       flex: 3,
-                                      child: ClipRRect(
-                                        borderRadius: BorderRadius.only(
-                                          topLeft: Radius.circular(10),
-                                          bottomLeft: Radius.circular(10),
-                                        ),
-                                        child: Image.asset(
-                                          'assets/imagen1.jpg',
-                                          fit: BoxFit.cover,
+                                      child: Center(
+                                        child: ClipRRect(
+                                          borderRadius: BorderRadius.only(
+                                            topLeft: Radius.circular(10),
+                                            bottomLeft: Radius.circular(10),
+                                          ),
+                                          child: CarouselSlider(
+                                            items: [
+                                              Image.asset('assets/TM1.jpg'),
+                                              Image.asset('assets/TM2.jpg'),
+                                            ],
+                                            options: CarouselOptions(
+                                              height: 350,
+                                              enlargeCenterPage: true,
+                                              autoPlay: true,
+                                              aspectRatio: 16 / 9,
+                                              autoPlayCurve:
+                                                  Curves.fastOutSlowIn,
+                                              enableInfiniteScroll: true,
+                                              autoPlayAnimationDuration:
+                                                  Duration(milliseconds: 800),
+                                              viewportFraction: 0.8,
+                                            ),
+                                          ),
                                         ),
                                       ),
                                     ),
@@ -333,6 +351,9 @@ class PortafolioPage extends StatelessWidget {
                                                 child: OutlinedButton(
                                               onPressed: () {
                                                 // Acción a realizar cuando se presiona el botón
+                                                const url =
+                                                    'http://servicios.pelileo.gob.ec/tramites/Departamentos/SecretariaTecnica.php?v=SERVICIOS%20PUBLICOS%20Y%20DESARROLLO%20DE%20LA%20COMUNIDAD';
+                                                launch(url);
                                               },
                                               child: Text(
                                                 'View more',
@@ -363,112 +384,125 @@ class PortafolioPage extends StatelessWidget {
                                 ),
                               ),
                             ),
-                            //other
-
+                            //other ->2
                             SizedBox(
                               height: 50.0,
                             ),
                             Padding(
                               padding: EdgeInsets.symmetric(horizontal: 8.0),
-                              child: Card(
-                                color: Colors.transparent,
-                                elevation: 4,
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(10),
-                                ),
-                                child: Row(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Expanded(
-                                      flex: 2,
-                                      child: Padding(
-                                        padding: EdgeInsets.all(16.0),
-                                        child: Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Text(
-                                              'Título del proyecto',
-                                              style: TextStyle(
-                                                fontSize: 18,
-                                                color: Color.fromRGBO(
-                                                    12, 183, 242, 2.0),
-                                                fontWeight: FontWeight.bold,
-                                              ),
-                                            ),
-                                            SizedBox(height: 8),
-                                            Text(
-                                              'Descripción del proyecto...',
-                                              style: TextStyle(
-                                                fontSize: 16,
-                                                color: Color.fromRGBO(
-                                                    12, 183, 242, 1.0),
-                                              ),
-                                            ),
-                                            SizedBox(height: 16),
-                                            Container(
-                                                child: OutlinedButton(
-                                              onPressed: () {
-                                                // Acción a realizar cuando se presiona el botón
-                                              },
-                                              child: Text(
-                                                'View more',
+                              child: Container(
+                                height: 300,
+                                child: Card(
+                                  color: Colors.transparent,
+                                  elevation: 4,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                  child: Row(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Expanded(
+                                        flex: 2,
+                                        child: Padding(
+                                          padding: EdgeInsets.all(16.0),
+                                          child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Text(
+                                                'Título del proyecto',
                                                 style: TextStyle(
-                                                  fontSize: 18.0,
-                                                  color: Colors.white54,
+                                                  fontSize: 18,
+                                                  color: Color.fromRGBO(
+                                                      12, 183, 242, 2.0),
+                                                  fontWeight: FontWeight.bold,
                                                 ),
                                               ),
-                                              style: OutlinedButton.styleFrom(
-                                                side: BorderSide(
-                                                  width: 2,
-                                                  color: Colors.white24,
-                                                ),
-                                                padding: EdgeInsets.symmetric(
-                                                    horizontal: 50,
-                                                    vertical: 20),
-                                                shape: RoundedRectangleBorder(
-                                                  borderRadius:
-                                                      BorderRadius.circular(8),
+                                              SizedBox(height: 8),
+                                              Text(
+                                                'Descripción del proyecto...',
+                                                style: TextStyle(
+                                                  fontSize: 16,
+                                                  color: Color.fromRGBO(
+                                                      12, 183, 242, 1.0),
                                                 ),
                                               ),
-                                            ))
-                                          ],
-                                        ),
-                                      ),
-                                    ),
-                                    Expanded(
-                                      flex: 3,
-                                      child: ClipRRect(
-                                        borderRadius: BorderRadius.only(
-                                          topLeft: Radius.circular(10),
-                                          bottomLeft: Radius.circular(10),
-                                        ),
-                                        child: CarouselSlider(
-                                          items: [
-                                            Image.asset('assets/imagen1.jpg'),
-                                            Image.asset('assets/imagen2.png'),
-                                            Image.asset('assets/imagen3.png'),
-                                          ],
-                                          options: CarouselOptions(
-                                            height: 200,
-                                            enlargeCenterPage: true,
-                                            autoPlay: true,
-                                            aspectRatio: 16 / 9,
-                                            autoPlayCurve: Curves.fastOutSlowIn,
-                                            enableInfiniteScroll: true,
-                                            autoPlayAnimationDuration:
-                                                Duration(milliseconds: 800),
-                                            viewportFraction: 0.8,
+                                              SizedBox(height: 16),
+                                              Container(
+                                                child: OutlinedButton(
+                                                  onPressed: () {
+                                                    // Acción a realizar cuando se presiona el botón
+                                                  },
+                                                  child: Text(
+                                                    'View more',
+                                                    style: TextStyle(
+                                                      fontSize: 18.0,
+                                                      color: Colors.white54,
+                                                    ),
+                                                  ),
+                                                  style:
+                                                      OutlinedButton.styleFrom(
+                                                    side: BorderSide(
+                                                      width: 2,
+                                                      color: Colors.white24,
+                                                    ),
+                                                    padding:
+                                                        EdgeInsets.symmetric(
+                                                            horizontal: 50,
+                                                            vertical: 20),
+                                                    shape:
+                                                        RoundedRectangleBorder(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              8),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
                                           ),
                                         ),
                                       ),
-                                    ),
-                                  ],
+                                      Expanded(
+                                        flex: 3,
+                                        child: Center(
+                                          child: ClipRRect(
+                                            borderRadius: BorderRadius.only(
+                                              topLeft: Radius.circular(10),
+                                              bottomLeft: Radius.circular(10),
+                                            ),
+                                            child: CarouselSlider(
+                                              items: [
+                                                Image.asset('assets/B1.jpg'),
+                                                Image.asset('assets/B2.jpg'),
+                                                Image.asset('assets/B3.jpg'),
+                                                Image.asset('assets/B4.jpg'),
+                                                Image.asset('assets/B5.jpg'),
+                                              ],
+                                              options: CarouselOptions(
+                                                height: 350,
+                                                enlargeCenterPage: true,
+                                                autoPlay: true,
+                                                aspectRatio: 16 / 9,
+                                                autoPlayCurve:
+                                                    Curves.fastOutSlowIn,
+                                                enableInfiniteScroll: true,
+                                                autoPlayAnimationDuration:
+                                                    Duration(milliseconds: 800),
+                                                viewportFraction: 0.8,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ),
                             ),
 
-                            //other
+                            //other ->3
                             SizedBox(
                               height: 20.0,
                             ),
@@ -485,14 +519,30 @@ class PortafolioPage extends StatelessWidget {
                                   children: [
                                     Expanded(
                                       flex: 3,
-                                      child: ClipRRect(
-                                        borderRadius: BorderRadius.only(
-                                          topLeft: Radius.circular(10),
-                                          bottomLeft: Radius.circular(10),
-                                        ),
-                                        child: Image.asset(
-                                          'assets/imagen1.jpg',
-                                          fit: BoxFit.cover,
+                                      child: Center(
+                                        child: ClipRRect(
+                                          borderRadius: BorderRadius.only(
+                                            topLeft: Radius.circular(10),
+                                            bottomLeft: Radius.circular(10),
+                                          ),
+                                          child: CarouselSlider(
+                                            items: [
+                                              Image.asset('assets/TM1.jpg'),
+                                              Image.asset('assets/TM2.jpg'),
+                                            ],
+                                            options: CarouselOptions(
+                                              height: 350,
+                                              enlargeCenterPage: true,
+                                              autoPlay: true,
+                                              aspectRatio: 16 / 9,
+                                              autoPlayCurve:
+                                                  Curves.fastOutSlowIn,
+                                              enableInfiniteScroll: true,
+                                              autoPlayAnimationDuration:
+                                                  Duration(milliseconds: 800),
+                                              viewportFraction: 0.8,
+                                            ),
+                                          ),
                                         ),
                                       ),
                                     ),
