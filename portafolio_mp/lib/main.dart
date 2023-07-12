@@ -65,6 +65,7 @@ class PortafolioPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final Color colorText = Color.fromRGBO(173, 216, 230, 1.0);
     final Color colorTitle = Color.fromRGBO(174, 214, 241, 1.0);
+    final TextStyle miTextStyle = GoogleFonts.chivoMono(fontSize: 16,color: colorText,);
 
     return Scaffold(
       appBar: AppBar(
@@ -81,8 +82,8 @@ class PortafolioPage extends StatelessWidget {
         child: Row(
           children: [
             Padding(
-              padding: EdgeInsets.all(25.0),
-              child: Expanded(
+              padding: EdgeInsets.all(20.0),
+              child: Flexible(
                 flex: 2,
                 child: Container(
                   child: Column(
@@ -155,11 +156,11 @@ class PortafolioPage extends StatelessWidget {
                 ),
               ),
             ),
-            Expanded(
+            Flexible(
               flex: 8,
               child: SingleChildScrollView(
                   child: Padding(
-                padding: EdgeInsets.all(100.0),
+                padding: EdgeInsets.all(50.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
@@ -173,10 +174,9 @@ class PortafolioPage extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Container(
-                              child: Text(
-                                "Hi, My name is ",
-                                style: GoogleFonts.roboto(color: Colors.white38,fontSize: 20)
-                              ),
+                              child: Text("Hi, My name is ",
+                                  style: GoogleFonts.roboto(
+                                      color: Colors.white38, fontSize: 20)),
                             ),
                             SizedBox(
                               height: 15.0,
@@ -271,7 +271,7 @@ class PortafolioPage extends StatelessWidget {
                                 color: Colors.transparent,
                                 child: Row(
                                   children: [
-                                    Expanded(
+                                    Flexible(
                                       flex: 3,
                                       child: Column(
                                         crossAxisAlignment:
@@ -280,7 +280,12 @@ class PortafolioPage extends StatelessWidget {
                                           Padding(
                                             padding: EdgeInsets.all(8.0),
                                             child: Text(
-                                              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consectetur lectus in efficitur consectetur. Sed eget mi eu dui tristique gravida.',
+                                              "Hello! My name is Paulo and I enjoy creating things that I am passionate about. My main focus is creating amazing mobile apps with attractive design and powerful functionality. In addition, I am also in charge of developing impressive websites"
+                                              "Here are some technologies I have been working with recently:"
+                                              "•Development of mobile applications on iOS and Android platforms using Java Android and Flutter. "
+                                              "•Website development using HTML, CSS and JavaScript, as well as frameworks such as Angular. "
+                                              "•Development of desktop sites using java and C#. "
+                                              "If you are interested in collaborating on an exciting project or have any ideas you would like to discuss, I would be happy to hear from you!",
                                               style: GoogleFonts.chivoMono(
                                                   fontSize: 16,
                                                   color: colorText),
@@ -289,7 +294,7 @@ class PortafolioPage extends StatelessWidget {
                                         ],
                                       ),
                                     ),
-                                    Expanded(
+                                    Flexible(
                                       flex: 2,
                                       child: Container(
                                         decoration: BoxDecoration(
@@ -313,7 +318,7 @@ class PortafolioPage extends StatelessWidget {
                         ),
 
                         SizedBox(
-                          height: 400,
+                          height: 200,
                         ),
                         //some things  I've build
                         Column(
@@ -350,7 +355,7 @@ class PortafolioPage extends StatelessWidget {
                                 child: Row(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Expanded(
+                                    Flexible(
                                       flex: 3,
                                       child: Center(
                                         child: ClipRRect(
@@ -379,7 +384,7 @@ class PortafolioPage extends StatelessWidget {
                                         ),
                                       ),
                                     ),
-                                    Expanded(
+                                    Flexible(
                                       flex: 2,
                                       child: Padding(
                                         padding: EdgeInsets.all(16.0),
@@ -462,7 +467,7 @@ class PortafolioPage extends StatelessWidget {
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                      Expanded(
+                                      Flexible(
                                         flex: 2,
                                         child: Padding(
                                           padding: EdgeInsets.all(16.0),
@@ -471,7 +476,7 @@ class PortafolioPage extends StatelessWidget {
                                                 CrossAxisAlignment.start,
                                             children: [
                                               Text(
-                                                'Título del proyecto',
+                                                'System for property inquiries',
                                                 style: GoogleFonts.shantellSans(
                                                   fontSize: 24,
                                                   color: colorTitle,
@@ -480,11 +485,8 @@ class PortafolioPage extends StatelessWidget {
                                               ),
                                               SizedBox(height: 8),
                                               Text(
-                                                'Descripción del proyecto...',
-                                                style: GoogleFonts.chivoMono(
-                                                  fontSize: 16,
-                                                  color: colorText,
-                                                ),
+                                                'This tool provides users with the ability to query and obtain relevant details about different types of assets and real estate that you have registered in your name.',
+                                                style: miTextStyle,
                                               ),
                                               SizedBox(height: 16),
                                               Container(
@@ -522,7 +524,7 @@ class PortafolioPage extends StatelessWidget {
                                           ),
                                         ),
                                       ),
-                                      Expanded(
+                                      Flexible(
                                         flex: 3,
                                         child: Center(
                                           child: ClipRRect(
@@ -572,7 +574,7 @@ class PortafolioPage extends StatelessWidget {
                                 child: Row(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Expanded(
+                                    Flexible(
                                       flex: 3,
                                       child: Center(
                                         child: ClipRRect(
@@ -604,7 +606,7 @@ class PortafolioPage extends StatelessWidget {
                                         ),
                                       ),
                                     ),
-                                    Expanded(
+                                    Flexible(
                                       flex: 2,
                                       child: Padding(
                                         padding: EdgeInsets.all(16.0),
@@ -613,7 +615,7 @@ class PortafolioPage extends StatelessWidget {
                                               CrossAxisAlignment.start,
                                           children: [
                                             Text(
-                                              'Título del proyecto',
+                                              'Bus management application',
                                               style: GoogleFonts.shantellSans(
                                                 fontSize: 24,
                                                 color: colorTitle,
@@ -622,11 +624,8 @@ class PortafolioPage extends StatelessWidget {
                                             ),
                                             SizedBox(height: 8),
                                             Text(
-                                              'Descripción del proyecto...',
-                                              style: GoogleFonts.chivoMono(
-                                                fontSize: 16,
-                                                color: colorText,
-                                              ),
+                                              'It allows users to purchase bus tickets conveniently and efficiently. This app gives users the ability to search for available routes, select times and seats, make payments, and receive e-tickets right on their devices.',
+                                              style: miTextStyle,
                                             ),
                                             SizedBox(height: 16),
                                             Container(
@@ -659,6 +658,178 @@ class PortafolioPage extends StatelessWidget {
                                         ),
                                       ),
                                     ),
+                                  ],
+                                ),
+                              ),
+                            ),
+
+                            SizedBox(
+                              height: 200,
+                            ),
+                            Container(
+                              child: AnimatedTextKit(
+                                animatedTexts: [
+                                  TypewriterAnimatedText(
+                                    '3)  Technology with which I have worked',
+                                    textStyle: TextStyle(
+                                      fontSize: 20,
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                    speed: Duration(milliseconds: 200),
+                                  ),
+                                ],
+                                repeatForever: true,
+                              ),
+                            ),
+
+                            Padding(
+                              padding: EdgeInsets.all(10.0),
+                              child: Card(
+                                color: Colors.transparent,
+                                child: Row(
+                                  //contecdra tanto backend como fronend
+                                  children: [
+                                    //frontend
+                                    Expanded(
+                                        child: Padding(
+                                      padding: EdgeInsets.all(10.0),
+                                      child: Column(
+                                        children: [
+                                          Text(
+                                            'Desarrollo Frontend',
+                                            style: miTextStyle,
+                                          ),
+                                          SizedBox(height: 5),
+                                          Row(
+                                            children: [
+                                              Text('HTML5',style: miTextStyle,),
+                                              SizedBox(width: 10),
+                                              Expanded(
+                                                child: LinearProgressIndicator(
+                                                  value: 0.88,
+                                                ),
+                                              ),
+                                              SizedBox(width: 5),
+                                              Text('88%',style: miTextStyle,),
+                                            ],
+                                          ),
+                                          //other
+                                          SizedBox(height: 5),
+                                          Row(
+                                            children: [
+                                              Text('CSS3',style: miTextStyle,),
+                                              SizedBox(width: 10),
+                                              Expanded(
+                                                child: LinearProgressIndicator(
+                                                  value: 0.88,
+                                                ),
+                                              ),
+                                              SizedBox(width: 5),
+                                              Text('88%',style: miTextStyle,),
+                                            ],
+                                          ),
+                                          //other
+                                          SizedBox(height: 5),
+                                          Row(
+                                            children: [
+                                              Text('JS',style: miTextStyle,),
+                                              SizedBox(width: 10),
+                                              Expanded(
+                                                child: LinearProgressIndicator(
+                                                  value: 0.88,
+                                                ),
+                                              ),
+                                              SizedBox(width: 5),
+                                              Text('88%',style: miTextStyle,),
+                                            ],
+                                          ),
+                                          //other
+                                          SizedBox(height: 5),
+                                          Row(
+                                            children: [
+                                              Text('FLUTTER',style: miTextStyle,),
+                                              SizedBox(width: 10),
+                                              Expanded(
+                                                child: LinearProgressIndicator(
+                                                  value: 0.88,
+                                                ),
+                                              ),
+                                              SizedBox(width: 5),
+                                              Text('88%',style: miTextStyle,),
+                                            ],
+                                          ),
+                                        ],
+                                      ),
+                                    )),
+                                    Expanded(
+                                        child: Padding(
+                                      padding: EdgeInsets.all(10.0),
+                                      child: Column(
+                                        children: [
+                                          Text(
+                                            'Desarrollo Backend',
+                                            style: miTextStyle,
+                                          ),
+                                          SizedBox(height: 5),
+                                          Row(
+                                            children: [
+                                              Text('PHP', style: miTextStyle,),
+                                              SizedBox(width: 10),
+                                              Expanded(
+                                                child: LinearProgressIndicator(
+                                                  value: 0.88,
+                                                ),
+                                              ),
+                                              SizedBox(width: 5),
+                                              Text('88%', style: miTextStyle),
+                                            ],
+                                          ),
+                                          //other
+                                          Row(
+                                            children: [
+                                              Text('C#',style: miTextStyle,),
+                                              SizedBox(width: 10),
+                                              Expanded(
+                                                child: LinearProgressIndicator(
+                                                  value: 0.60,
+                                                ),
+                                              ),
+                                              SizedBox(width: 5),
+                                              Text('60%',style: miTextStyle,),
+                                            ],
+                                          ),
+                                          //other
+                                          Row(
+                                            children: [
+                                              Text('MySQL',style: miTextStyle,),
+                                              SizedBox(width: 10),
+                                              Expanded(
+                                                child: LinearProgressIndicator(
+                                                  value: 0.90,
+                                                ),
+                                              ),
+                                              SizedBox(width: 5),
+                                              Text('90%',style: miTextStyle,),
+                                            ],
+                                          ),
+                                          //other
+                                          Row(
+                                            children: [
+                                              Text('SqlServer',style: miTextStyle,),
+                                              SizedBox(width: 10),
+                                              Expanded(
+                                                child: LinearProgressIndicator(
+                                                  value: 0.90,
+                                                ),
+                                              ),
+                                              SizedBox(width: 5),
+                                              Text('90%',style: miTextStyle,),
+                                            ],
+                                          ),
+                                        ],
+                                      ),
+                                    )),
                                   ],
                                 ),
                               ),
@@ -703,7 +874,7 @@ class PortafolioPage extends StatelessWidget {
                 ),
               )),
             ),
-            Expanded(
+            Flexible(
               flex: 1,
               child: Container(
                 child: RotatedBox(
