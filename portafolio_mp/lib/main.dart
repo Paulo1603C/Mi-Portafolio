@@ -3,6 +3,7 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() => runApp(PortafolioApp());
 
@@ -29,9 +30,41 @@ class PortafolioApp extends StatelessWidget {
 class PortafolioPage extends StatelessWidget {
   const PortafolioPage({Key? key}) : super(key: key);
 
+  //descarga un pdf
+  final pdfUrl =
+      'https://drive.google.com/file/d/1stuybcAxlaO4CVOUM4TaQ2KGGzyw9Gb3/view?usp=sharing';
+  void downloadPDF() async {
+    if (await canLaunch(pdfUrl)) {
+      await launch(pdfUrl);
+    } else {
+      throw 'No se puede abrir la URL del PDF';
+    }
+  }
+
+  //abrir git
+  final github = 'https://github.com/Paulo1603C';
+  void openGitHub() async {
+    if (await canLaunch(github)) {
+      await launch(github);
+    } else {
+      throw 'No se puede abrir la URL del PDF';
+    }
+  }
+
+  //abrir linkedin
+  final linkedin = 'https://www.linkedin.com/in/paulo-martinez-72585524b/';
+  void openGitlinkedin() async {
+    if (await canLaunch(linkedin)) {
+      await launch(linkedin);
+    } else {
+      throw 'No se puede abrir la URL del PDF';
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
-    final Color blueMarineColor = Colors.blue;
+    final Color colorText = Color.fromRGBO(173, 216, 230, 1.0);
+    final Color colorTitle = Color.fromRGBO(174, 214, 241, 1.0);
 
     return Scaffold(
       appBar: AppBar(
@@ -48,51 +81,77 @@ class PortafolioPage extends StatelessWidget {
         child: Row(
           children: [
             Padding(
-              padding: EdgeInsets.all(50.0),
+              padding: EdgeInsets.all(25.0),
               child: Expanded(
                 flex: 2,
                 child: Container(
                   child: Column(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      IconButton(
-                        icon: FaIcon(
-                          FontAwesomeIcons.github,
-                          size: 30,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Container(
+                            width: 50,
+                            height: 50,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(30),
+                                border: Border.all(
+                                    color: Colors.white, width: 2.0)),
+                            child: Center(
+                              child: Text(
+                                'P',
+                                style: TextStyle(
+                                  fontSize: 30,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            )),
+                        SizedBox(
+                          height: 350,
                         ),
-                        color: Colors.white,
-                        onPressed: () {
-                          // Acción al hacer clic en el icono de GitHub
-                        },
-                      ),
-                      SizedBox(
-                        height: 15.0,
-                      ),
-                      IconButton(
-                        icon: FaIcon(
-                          FontAwesomeIcons.linkedin,
-                          size: 30,
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            IconButton(
+                              icon: FaIcon(
+                                FontAwesomeIcons.github,
+                                size: 30,
+                              ),
+                              color: Colors.white,
+                              onPressed: () {
+                                // Acción al hacer clic en el icono de GitHub
+                                openGitHub();
+                              },
+                            ),
+                            SizedBox(
+                              height: 15.0,
+                            ),
+                            IconButton(
+                              icon: FaIcon(
+                                FontAwesomeIcons.linkedin,
+                                size: 30,
+                              ),
+                              color: Colors.white,
+                              onPressed: () {
+                                // Acción al hacer clic en el icono de LinkedIn
+                                openGitlinkedin();
+                              },
+                            ),
+                            SizedBox(
+                              height: 15.0,
+                            ),
+                            IconButton(
+                              icon: FaIcon(
+                                FontAwesomeIcons.instagram,
+                                size: 30,
+                              ),
+                              color: Colors.white,
+                              onPressed: () {
+                                // Acción al hacer clic en el icono de Instagram
+                              },
+                            ),
+                          ],
                         ),
-                        color: Colors.white,
-                        onPressed: () {
-                          // Acción al hacer clic en el icono de LinkedIn
-                        },
-                      ),
-                      SizedBox(
-                        height: 15.0,
-                      ),
-                      IconButton(
-                        icon: FaIcon(
-                          FontAwesomeIcons.instagram,
-                          size: 30,
-                        ),
-                        color: Colors.white,
-                        onPressed: () {
-                          // Acción al hacer clic en el icono de Instagram
-                        },
-                      ),
-                    ],
-                  ),
+                      ]),
                 ),
               ),
             ),
@@ -116,8 +175,7 @@ class PortafolioPage extends StatelessWidget {
                             Container(
                               child: Text(
                                 "Hi, My name is ",
-                                style: TextStyle(
-                                    color: Colors.white38, fontSize: 20),
+                                style: GoogleFonts.roboto(color: Colors.white38,fontSize: 20)
                               ),
                             ),
                             SizedBox(
@@ -128,7 +186,7 @@ class PortafolioPage extends StatelessWidget {
                                 animatedTexts: [
                                   TypewriterAnimatedText(
                                     'Paulo Martínez',
-                                    textStyle: TextStyle(
+                                    textStyle: GoogleFonts.alkatra(
                                       fontSize: 50,
                                       color: Colors.white,
                                       fontWeight: FontWeight.bold,
@@ -144,13 +202,13 @@ class PortafolioPage extends StatelessWidget {
                             ),
                             Container(
                               child: Padding(
-                                padding: EdgeInsets.only(left: 16.0),
+                                padding: EdgeInsets.only(left: 20.0),
                                 child: Text(
                                     "I am a passionate Software Engineering student about programming and software development. Currently, I am looking for an opportunity" +
                                         " to apply my knowledge and skills in a professional environment and learn from experts in the industry. I am interested in challenging" +
                                         " projects that allow me to grow and develop as a software engineer.",
-                                    style: TextStyle(
-                                        color: Colors.white70, fontSize: 15)),
+                                    style: GoogleFonts.chivoMono(
+                                        color: colorText, fontSize: 15)),
                               ),
                             ),
                             SizedBox(height: 15.0),
@@ -158,6 +216,7 @@ class PortafolioPage extends StatelessWidget {
                                 child: OutlinedButton(
                               onPressed: () {
                                 // Acción a realizar cuando se presiona el botón
+                                downloadPDF();
                               },
                               child: Text(
                                 'check out my item',
@@ -222,9 +281,9 @@ class PortafolioPage extends StatelessWidget {
                                             padding: EdgeInsets.all(8.0),
                                             child: Text(
                                               'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consectetur lectus in efficitur consectetur. Sed eget mi eu dui tristique gravida.',
-                                              style: TextStyle(
+                                              style: GoogleFonts.chivoMono(
                                                   fontSize: 16,
-                                                  color: Colors.white),
+                                                  color: colorText),
                                             ),
                                           ),
                                         ],
@@ -329,21 +388,22 @@ class PortafolioPage extends StatelessWidget {
                                               CrossAxisAlignment.start,
                                           children: [
                                             Text(
-                                              'Título del proyecto',
-                                              style: TextStyle(
-                                                fontSize: 18,
-                                                color: Color.fromRGBO(
-                                                    12, 183, 242, 2.0),
+                                              'Procedure consultation system',
+                                              style: GoogleFonts.shantellSans(
+                                                fontSize: 24,
+                                                color: colorTitle,
                                                 fontWeight: FontWeight.bold,
                                               ),
                                             ),
                                             SizedBox(height: 8),
-                                            Text(
-                                              'Descripción del proyecto...',
-                                              style: TextStyle(
-                                                fontSize: 16,
-                                                color: Color.fromRGBO(
-                                                    12, 183, 242, 1.0),
+                                            Padding(
+                                              padding: EdgeInsets.all(10),
+                                              child: Text(
+                                                'Application that allows users to make inquiries and obtain information on administrative procedures and paperwork related to the municipal sphere. Through the application, users can access a variety of services, such as checking the status of ongoing procedures, obtaining information on requirements and necessary documentation, and accessing forms and requests related to municipal procedures.',
+                                                style: GoogleFonts.chivoMono(
+                                                  fontSize: 15,
+                                                  color: colorText,
+                                                ),
                                               ),
                                             ),
                                             SizedBox(height: 16),
@@ -352,7 +412,7 @@ class PortafolioPage extends StatelessWidget {
                                               onPressed: () {
                                                 // Acción a realizar cuando se presiona el botón
                                                 const url =
-                                                    'http://servicios.pelileo.gob.ec/tramites/Departamentos/SecretariaTecnica.php?v=SERVICIOS%20PUBLICOS%20Y%20DESARROLLO%20DE%20LA%20COMUNIDAD';
+                                                    'http://servicios.pelileo.gob.ec/tramites/index.php';
                                                 launch(url);
                                               },
                                               child: Text(
@@ -412,20 +472,18 @@ class PortafolioPage extends StatelessWidget {
                                             children: [
                                               Text(
                                                 'Título del proyecto',
-                                                style: TextStyle(
-                                                  fontSize: 18,
-                                                  color: Color.fromRGBO(
-                                                      12, 183, 242, 2.0),
+                                                style: GoogleFonts.shantellSans(
+                                                  fontSize: 24,
+                                                  color: colorTitle,
                                                   fontWeight: FontWeight.bold,
                                                 ),
                                               ),
                                               SizedBox(height: 8),
                                               Text(
                                                 'Descripción del proyecto...',
-                                                style: TextStyle(
+                                                style: GoogleFonts.chivoMono(
                                                   fontSize: 16,
-                                                  color: Color.fromRGBO(
-                                                      12, 183, 242, 1.0),
+                                                  color: colorText,
                                                 ),
                                               ),
                                               SizedBox(height: 16),
@@ -474,11 +532,8 @@ class PortafolioPage extends StatelessWidget {
                                             ),
                                             child: CarouselSlider(
                                               items: [
-                                                Image.asset('assets/B1.jpg'),
-                                                Image.asset('assets/B2.jpg'),
-                                                Image.asset('assets/B3.jpg'),
-                                                Image.asset('assets/B4.jpg'),
-                                                Image.asset('assets/B5.jpg'),
+                                                Image.asset('assets/SM1.jpg'),
+                                                Image.asset('assets/SM2.jpg'),
                                               ],
                                               options: CarouselOptions(
                                                 height: 350,
@@ -527,8 +582,11 @@ class PortafolioPage extends StatelessWidget {
                                           ),
                                           child: CarouselSlider(
                                             items: [
-                                              Image.asset('assets/TM1.jpg'),
-                                              Image.asset('assets/TM2.jpg'),
+                                              Image.asset('assets/B1.jpg'),
+                                              Image.asset('assets/B2.jpg'),
+                                              Image.asset('assets/B3.jpg'),
+                                              Image.asset('assets/B4.jpg'),
+                                              Image.asset('assets/B5.jpg'),
                                             ],
                                             options: CarouselOptions(
                                               height: 350,
@@ -556,20 +614,18 @@ class PortafolioPage extends StatelessWidget {
                                           children: [
                                             Text(
                                               'Título del proyecto',
-                                              style: TextStyle(
-                                                fontSize: 18,
-                                                color: Color.fromRGBO(
-                                                    12, 183, 242, 2.0),
+                                              style: GoogleFonts.shantellSans(
+                                                fontSize: 24,
+                                                color: colorTitle,
                                                 fontWeight: FontWeight.bold,
                                               ),
                                             ),
                                             SizedBox(height: 8),
                                             Text(
                                               'Descripción del proyecto...',
-                                              style: TextStyle(
+                                              style: GoogleFonts.chivoMono(
                                                 fontSize: 16,
-                                                color: Color.fromRGBO(
-                                                    12, 183, 242, 1.0),
+                                                color: colorText,
                                               ),
                                             ),
                                             SizedBox(height: 16),
@@ -609,6 +665,38 @@ class PortafolioPage extends StatelessWidget {
                             ),
                           ],
                         ),
+                        //footer
+                        SizedBox(
+                          height: 200,
+                          child: Divider(
+                            color: Colors.black,
+                            thickness: 1,
+                          ),
+                        ),
+                        Container(
+                          height: 80,
+                          color: Colors.transparent,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                '© 2023 ( Paulo Martínez ) => { My Web page. All rights reserved }',
+                                style: TextStyle(
+                                    fontSize: 14,
+                                    color: colorTitle,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                              SizedBox(height: 16),
+                              Text(
+                                'Contact: paulomartinez1999@gmail.com | phone: 0999065428',
+                                style: TextStyle(
+                                    fontSize: 12,
+                                    color: colorText,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            ],
+                          ),
+                        ),
                       ],
                     ),
                   ],
@@ -618,8 +706,38 @@ class PortafolioPage extends StatelessWidget {
             Expanded(
               flex: 1,
               child: Container(
-                // Contenido columna derecha
-                child: Text("data"),
+                child: RotatedBox(
+                  quarterTurns: 1,
+                  child: MouseRegion(
+                    cursor: SystemMouseCursors.click,
+                    child: GestureDetector(
+                      onTap: () async {
+                        final Uri params = Uri(
+                          scheme: 'mailto',
+                          path: 'paulomartinez1999@gmail.com',
+                          query:
+                              'subject=Asunto del correo&body=Cuerpo del correo',
+                        );
+                        final String url = params.toString();
+                        if (await canLaunch(url)) {
+                          await launch(url);
+                        } else {
+                          throw 'No se puede abrir la aplicación de correo';
+                        }
+                      },
+                      child: Center(
+                        child: Text(
+                          'paulomartinez1999@gmail.com',
+                          style: GoogleFonts.instrumentSans(
+                            fontSize: 20,
+                            decoration: TextDecoration.none,
+                            color: colorText,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
               ),
             ),
           ],
