@@ -6,10 +6,7 @@ Este es mi portafolio web personal, donde muestro mis habilidades, proyectos y e
 
 ## Tecnologías utilizadas
 
-- HTML5
-- CSS3
-- JavaScript
-- Bootstrap
+- Flutter
 
 ## Características
 
@@ -20,18 +17,19 @@ Este es mi portafolio web personal, donde muestro mis habilidades, proyectos y e
 - Integración con redes sociales para que los visitantes puedan seguirme y conectarse.
 
 ## Instalación y ejecución
-
+-Para poder correr esta aplicaion es necesario tener instala flutter y dart.
+- Pasos:
 1. Clona o descarga este repositorio en tu máquina local.
-2. Navega hasta el directorio del proyecto.
-3. Abre el archivo `index.html` en tu navegador web.
+2. Abre el proyecto en tu editor texto preferido .
+3. Ejecuta la aplicaion `main.dart`.
 
 ## Personalización
 
-Si deseas personalizar este portafolio web para tu propio uso, sigue estos pasos:
+Si deseas personalizar este portafolio web para tu propio uso debes tener conocimiento en flutter y su lenguaje dart, sigue estos pasos:
 
-1. Modifica el archivo `index.html` para agregar tu propia información y contenido.
-2. Edita el archivo `style.css` para ajustar el estilo y el diseño según tus preferencias.
-3. Agrega tus propias imágenes en la carpeta `images` y actualiza las referencias correspondientes en el código HTML.
+1. Modifica el archivo `dart.main` para agregar tu propia información y nuevos widgets.
+2. Agrega tus propias imágenes en la carpeta `images` y actualiza las referencias correspondientes en el código.
+3. Guarda cambios y puedes ejecutarlo y ver los resultados
 
 ## Contribución
 
