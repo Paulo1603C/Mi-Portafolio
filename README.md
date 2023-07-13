@@ -2,7 +2,7 @@
 
 Este es mi portafolio web personal, donde muestro mis habilidades, proyectos y experiencia profesional. Proporciona una visión general de mi trabajo y permite a los visitantes ponerse en contacto conmigo.
 
-![Captura de pantalla del portafolio web](screenshot.png)
+![Captura de pantalla del portafolio web](image.jpg)
 
 ## Tecnologías utilizadas
 
