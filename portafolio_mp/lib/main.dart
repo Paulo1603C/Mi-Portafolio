@@ -41,6 +41,37 @@ class PortafolioPage extends StatelessWidget {
     }
   }
 
+  //enviar correo
+  void sendEmail() async {
+    //open gmail
+    final Uri params = Uri(
+      scheme: 'mailto',
+      path: 'paulomartinez1999@gmail.com',
+      query: 'subject=Asunto del correo&body=Cuerpo del correo',
+    );
+    final String url = params.toString();
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'No se puede abrir la aplicación de correo';
+    }
+  }
+
+  //send whatsApp
+  void openWhatsApp() async {
+    final phoneNumber = '0999065428'; // Reemplaza con tu número de teléfono
+    final message =
+        '¡Hola! Estoy interesado en contactarte.'; // Reemplaza con el mensaje que deseas enviar
+    final url =
+        'https://wa.me/$phoneNumber?text=${Uri.encodeComponent(message)}';
+
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'No se pudo abrir WhatsApp';
+    }
+  }
+
   //abrir git
   final github = 'https://github.com/Paulo1603C';
   void openGitHub() async {
@@ -65,17 +96,15 @@ class PortafolioPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final Color colorText = Color.fromRGBO(173, 216, 230, 1.0);
     final Color colorTitle = Color.fromRGBO(174, 214, 241, 1.0);
-    final TextStyle miTextStyle = GoogleFonts.chivoMono(fontSize: 16,color: colorText,);
+    final TextStyle miTextStyle = GoogleFonts.chivoMono(
+      fontSize: 16,
+      color: colorText,
+    );
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("Mi Portafolio"),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.only(
-            bottomLeft: Radius.circular(5),
-            bottomRight: Radius.circular(5),
-          ),
-        ),
+        title: Text("Martech Solutions", style: GoogleFonts.saira(fontWeight: FontWeight.bold),),
+        backgroundColor: Color.fromRGBO(0, 157, 113, 2.0),
       ),
       body: Container(
         color: Color.fromRGBO(37, 36, 64, 1.0),
@@ -90,16 +119,16 @@ class PortafolioPage extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Container(
-                            width: 50,
-                            height: 50,
+                            width: 60,
+                            height: 60,
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(30),
                                 border: Border.all(
                                     color: Colors.white, width: 2.0)),
                             child: Center(
                               child: Text(
-                                'P',
-                                style: TextStyle(
+                                'MS',
+                                style: GoogleFonts.saira(
                                   fontSize: 30,
                                   color: Colors.white,
                                   fontWeight: FontWeight.bold,
@@ -160,7 +189,7 @@ class PortafolioPage extends StatelessWidget {
               flex: 8,
               child: SingleChildScrollView(
                   child: Padding(
-                padding: EdgeInsets.all(50.0),
+                padding: EdgeInsets.all(100.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
@@ -273,43 +302,70 @@ class PortafolioPage extends StatelessWidget {
                                   children: [
                                     Flexible(
                                       flex: 3,
-                                      child: Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Padding(
-                                            padding: EdgeInsets.all(8.0),
-                                            child: Text(
-                                              "Hello! My name is Paulo and I enjoy creating things that I am passionate about. My main focus is creating amazing mobile apps with attractive design and powerful functionality. In addition, I am also in charge of developing impressive websites"
-                                              "Here are some technologies I have been working with recently:"
-                                              "•Development of mobile applications on iOS and Android platforms using Java Android and Flutter. "
-                                              "•Website development using HTML, CSS and JavaScript, as well as frameworks such as Angular. "
-                                              "•Development of desktop sites using java and C#. "
-                                              "If you are interested in collaborating on an exciting project or have any ideas you would like to discuss, I would be happy to hear from you!",
-                                              style: GoogleFonts.chivoMono(
-                                                  fontSize: 16,
-                                                  color: colorText),
-                                            ),
+                                      child: Padding(
+                                        padding: EdgeInsets.all(60),
+                                        child: Container(
+                                          child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Text(
+                                                "Hello! My name is Paulo and I enjoy creating things that I am passionate about. My main focus is creating amazing mobile apps with attractive design and powerful functionality. In addition, I am also in charge of developing impressive websites"
+                                                "Here are some technologies I have been working with recently:",
+                                                style: miTextStyle,
+                                              ),
+                                              SizedBox(
+                                                height: 5,
+                                              ),
+                                              Text(
+                                                "•   Development of mobile applications on iOS and Android platforms using Java Android and Flutter. ",
+                                                style: miTextStyle,
+                                              ),
+                                              SizedBox(
+                                                height: 5,
+                                              ),
+                                              Text(
+                                                "•   Website development using HTML, CSS and JavaScript, as well as frameworks such as Angular. ",
+                                                style: miTextStyle,
+                                              ),
+                                              SizedBox(
+                                                height: 5,
+                                              ),
+                                              Text(
+                                                "•   Development of desktop sites using java and C#. ",
+                                                style: miTextStyle,
+                                              ),
+                                              SizedBox(
+                                                height: 5,
+                                              ),
+                                              Text(
+                                                "If you are interested in collaborating on an exciting project or have any ideas you would like to discuss, I would be happy to hear from you!",
+                                                style: miTextStyle,
+                                              ),
+                                            ],
                                           ),
-                                        ],
+                                        ),
                                       ),
                                     ),
                                     Flexible(
-                                      flex: 2,
-                                      child: Container(
-                                        decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.only(
-                                            topRight: Radius.circular(14),
-                                            bottomRight: Radius.circular(14),
+                                        flex: 2,
+                                        child: Padding(
+                                          padding: EdgeInsets.all(10),
+                                          child: Container(
+                                            decoration: BoxDecoration(
+                                              borderRadius: BorderRadius.only(
+                                                topRight: Radius.circular(14),
+                                                bottomRight:
+                                                    Radius.circular(14),
+                                              ),
+                                              color: Colors.grey,
+                                            ),
+                                            child: Image.asset(
+                                              'assets/Paulo.jpg',
+                                              fit: BoxFit.cover,
+                                            ),
                                           ),
-                                          color: Colors.grey,
-                                        ),
-                                        child: Image.asset(
-                                          'assets/imagen2.png',
-                                          fit: BoxFit.cover,
-                                        ),
-                                      ),
-                                    ),
+                                        )),
                                   ],
                                 ),
                               ),
@@ -703,7 +759,10 @@ class PortafolioPage extends StatelessWidget {
                                           SizedBox(height: 5),
                                           Row(
                                             children: [
-                                              Text('HTML5',style: miTextStyle,),
+                                              Text(
+                                                'HTML5',
+                                                style: miTextStyle,
+                                              ),
                                               SizedBox(width: 10),
                                               Expanded(
                                                 child: LinearProgressIndicator(
@@ -711,14 +770,20 @@ class PortafolioPage extends StatelessWidget {
                                                 ),
                                               ),
                                               SizedBox(width: 5),
-                                              Text('88%',style: miTextStyle,),
+                                              Text(
+                                                '88%',
+                                                style: miTextStyle,
+                                              ),
                                             ],
                                           ),
                                           //other
                                           SizedBox(height: 5),
                                           Row(
                                             children: [
-                                              Text('CSS3',style: miTextStyle,),
+                                              Text(
+                                                'CSS3',
+                                                style: miTextStyle,
+                                              ),
                                               SizedBox(width: 10),
                                               Expanded(
                                                 child: LinearProgressIndicator(
@@ -726,14 +791,20 @@ class PortafolioPage extends StatelessWidget {
                                                 ),
                                               ),
                                               SizedBox(width: 5),
-                                              Text('88%',style: miTextStyle,),
+                                              Text(
+                                                '88%',
+                                                style: miTextStyle,
+                                              ),
                                             ],
                                           ),
                                           //other
                                           SizedBox(height: 5),
                                           Row(
                                             children: [
-                                              Text('JS',style: miTextStyle,),
+                                              Text(
+                                                'JS',
+                                                style: miTextStyle,
+                                              ),
                                               SizedBox(width: 10),
                                               Expanded(
                                                 child: LinearProgressIndicator(
@@ -741,14 +812,20 @@ class PortafolioPage extends StatelessWidget {
                                                 ),
                                               ),
                                               SizedBox(width: 5),
-                                              Text('88%',style: miTextStyle,),
+                                              Text(
+                                                '88%',
+                                                style: miTextStyle,
+                                              ),
                                             ],
                                           ),
                                           //other
                                           SizedBox(height: 5),
                                           Row(
                                             children: [
-                                              Text('FLUTTER',style: miTextStyle,),
+                                              Text(
+                                                'FLUTTER',
+                                                style: miTextStyle,
+                                              ),
                                               SizedBox(width: 10),
                                               Expanded(
                                                 child: LinearProgressIndicator(
@@ -756,7 +833,10 @@ class PortafolioPage extends StatelessWidget {
                                                 ),
                                               ),
                                               SizedBox(width: 5),
-                                              Text('88%',style: miTextStyle,),
+                                              Text(
+                                                '88%',
+                                                style: miTextStyle,
+                                              ),
                                             ],
                                           ),
                                         ],
@@ -774,7 +854,10 @@ class PortafolioPage extends StatelessWidget {
                                           SizedBox(height: 5),
                                           Row(
                                             children: [
-                                              Text('PHP', style: miTextStyle,),
+                                              Text(
+                                                'PHP',
+                                                style: miTextStyle,
+                                              ),
                                               SizedBox(width: 10),
                                               Expanded(
                                                 child: LinearProgressIndicator(
@@ -788,7 +871,10 @@ class PortafolioPage extends StatelessWidget {
                                           //other
                                           Row(
                                             children: [
-                                              Text('C#',style: miTextStyle,),
+                                              Text(
+                                                'C#',
+                                                style: miTextStyle,
+                                              ),
                                               SizedBox(width: 10),
                                               Expanded(
                                                 child: LinearProgressIndicator(
@@ -796,13 +882,19 @@ class PortafolioPage extends StatelessWidget {
                                                 ),
                                               ),
                                               SizedBox(width: 5),
-                                              Text('60%',style: miTextStyle,),
+                                              Text(
+                                                '60%',
+                                                style: miTextStyle,
+                                              ),
                                             ],
                                           ),
                                           //other
                                           Row(
                                             children: [
-                                              Text('MySQL',style: miTextStyle,),
+                                              Text(
+                                                'MySQL',
+                                                style: miTextStyle,
+                                              ),
                                               SizedBox(width: 10),
                                               Expanded(
                                                 child: LinearProgressIndicator(
@@ -810,13 +902,19 @@ class PortafolioPage extends StatelessWidget {
                                                 ),
                                               ),
                                               SizedBox(width: 5),
-                                              Text('90%',style: miTextStyle,),
+                                              Text(
+                                                '90%',
+                                                style: miTextStyle,
+                                              ),
                                             ],
                                           ),
                                           //other
                                           Row(
                                             children: [
-                                              Text('SqlServer',style: miTextStyle,),
+                                              Text(
+                                                'SqlServer',
+                                                style: miTextStyle,
+                                              ),
                                               SizedBox(width: 10),
                                               Expanded(
                                                 child: LinearProgressIndicator(
@@ -824,7 +922,10 @@ class PortafolioPage extends StatelessWidget {
                                                 ),
                                               ),
                                               SizedBox(width: 5),
-                                              Text('90%',style: miTextStyle,),
+                                              Text(
+                                                '90%',
+                                                style: miTextStyle,
+                                              ),
                                             ],
                                           ),
                                         ],
@@ -834,8 +935,87 @@ class PortafolioPage extends StatelessWidget {
                                 ),
                               ),
                             ),
+                            //Contact
+
+                            SizedBox(
+                              height: 200,
+                            ),
+                            Container(
+                              child: AnimatedTextKit(
+                                animatedTexts: [
+                                  TypewriterAnimatedText(
+                                    '4)  Contact',
+                                    textStyle: TextStyle(
+                                      fontSize: 20,
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                    speed: Duration(milliseconds: 200),
+                                  ),
+                                ],
+                                repeatForever: true,
+                              ),
+                            ),
+                            SizedBox(height: 15),
+                            Center(
+                              //padding: EdgeInsets.all(20),
+                              child: Container(
+                                width: 700,
+                                child: Column(
+                                  children: [
+                                    Text(
+                                      "Get In Touch",
+                                      style: GoogleFonts.chivoMono(
+                                          color: colorTitle, fontSize: 25),
+                                    ),
+                                    SizedBox(height: 15),
+                                    Text(
+                                      "Although I'm currently looking for any new opportunities, my inbox is always open. Whether you have a question or just want to say hi, I'll try my best to get to you as soon as possible.",
+                                      style: miTextStyle,
+                                    ),
+                                    SizedBox(height: 15),
+                                    Padding(
+                                      padding: EdgeInsets.all(10),
+                                      child: Container(
+                                        alignment: Alignment.center,
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            IconButton(
+                                              onPressed: () {
+                                                // Abrir WhatsApp
+                                                openWhatsApp();
+                                              },
+                                              icon: FaIcon(
+                                                  FontAwesomeIcons.whatsapp,
+                                                  size: 50),
+                                              color: Colors.white,
+                                            ),
+                                            SizedBox(
+                                                width:
+                                                    20), // Espacio entre los iconos
+                                            IconButton(
+                                              onPressed: () async {
+                                                // Abrir Gmail
+                                                sendEmail();
+                                              },
+                                              icon: FaIcon(
+                                                  FontAwesomeIcons.envelope,
+                                                  size: 50),
+                                              color: Colors.white,
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
                           ],
                         ),
+
                         //footer
                         SizedBox(
                           height: 200,
@@ -882,19 +1062,8 @@ class PortafolioPage extends StatelessWidget {
                   child: MouseRegion(
                     cursor: SystemMouseCursors.click,
                     child: GestureDetector(
-                      onTap: () async {
-                        final Uri params = Uri(
-                          scheme: 'mailto',
-                          path: 'paulomartinez1999@gmail.com',
-                          query:
-                              'subject=Asunto del correo&body=Cuerpo del correo',
-                        );
-                        final String url = params.toString();
-                        if (await canLaunch(url)) {
-                          await launch(url);
-                        } else {
-                          throw 'No se puede abrir la aplicación de correo';
-                        }
+                      onTap: () {
+                        sendEmail();
                       },
                       child: Center(
                         child: Text(
