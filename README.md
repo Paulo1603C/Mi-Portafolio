@@ -48,6 +48,4 @@ Si deseas contribuir a este proyecto, sigue estos pasos:
 - Sitio web: [Tu sitio web personal](https://www.tusitio.com)
 - Iconos: [Font Awesome](https://fontawesome.com)
 
-## Licencia
 
-Este proyecto está bajo la Licencia MIT. Consulta el archivo LICENSE para obtener más información.
