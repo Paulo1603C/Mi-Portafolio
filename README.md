@@ -45,7 +45,7 @@ Si deseas contribuir a este proyecto, sigue estos pasos:
 ## Créditos
 
 - Autor: Tu nombre
-- Sitio web: [Tu sitio web personal]([https://www.tusitio.com](https://mi-portafolio-1c89e.web.app/#/))
+- Sitio web: [Tu sitio web personal]([https://www.tusitio.com](https://mi-portafolio-1c89e.web.app/#/)
 - Iconos: [Font Awesome](https://fontawesome.com)
 
 
