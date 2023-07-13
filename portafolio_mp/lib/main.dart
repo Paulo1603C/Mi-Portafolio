@@ -103,7 +103,10 @@ class PortafolioPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("Martech Solutions", style: GoogleFonts.saira(fontWeight: FontWeight.bold),),
+        title: Text(
+          "Martech Solutions",
+          style: GoogleFonts.saira(fontWeight: FontWeight.bold),
+        ),
         backgroundColor: Color.fromRGBO(0, 157, 113, 2.0),
       ),
       body: Container(
@@ -210,21 +213,19 @@ class PortafolioPage extends StatelessWidget {
                             SizedBox(
                               height: 15.0,
                             ),
-                            Container(
-                              child: AnimatedTextKit(
-                                animatedTexts: [
-                                  TypewriterAnimatedText(
-                                    'Paulo Martínez',
-                                    textStyle: GoogleFonts.alkatra(
-                                      fontSize: 50,
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                    speed: Duration(milliseconds: 200),
+                            AnimatedTextKit(
+                              animatedTexts: [
+                                TypewriterAnimatedText(
+                                  'Paulo Martínez',
+                                  textStyle: GoogleFonts.alkatra(
+                                    fontSize: 50,
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
                                   ),
-                                ],
-                                repeatForever: true,
-                              ),
+                                  speed: Duration(milliseconds: 200),
+                                ),
+                              ],
+                              repeatForever: true,
                             ),
                             SizedBox(
                               height: 15.0,
@@ -549,6 +550,8 @@ class PortafolioPage extends StatelessWidget {
                                                 child: OutlinedButton(
                                                   onPressed: () {
                                                     // Acción a realizar cuando se presiona el botón
+                                                    const url = 'https://github.com/Paulo1603C/Sistema-para-consulta-de-bienes';
+                                                    launch(url);  
                                                   },
                                                   child: Text(
                                                     'View more',
@@ -688,6 +691,8 @@ class PortafolioPage extends StatelessWidget {
                                                 child: OutlinedButton(
                                               onPressed: () {
                                                 // Acción a realizar cuando se presiona el botón
+                                                const url = "https://github.com/Paulo1603C/Sistema-Web-movil-para-gestion-de-Buses";
+                                                launch(url);
                                               },
                                               child: Text(
                                                 'View more',
